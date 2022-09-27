@@ -119,3 +119,23 @@ func returnAge(myAge: Int?){
 }
 
 returnAge(myAge: number)
+
+
+print("------------------ CHANGE DATATYPE ------------------")
+
+let number1 = "20"
+let number2 = 30
+
+let sum = Int(number1)! + number2
+print(sum);
+
+
+if let num1 = Int(number1){
+    let sum = num1 + number2
+    print(sum)
+}else{
+    print("inform one number");
+}
+
+
+
