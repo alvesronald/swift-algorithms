@@ -88,3 +88,34 @@ print(emoji.prefix(5))
 
 
 
+// OPCIONALS
+print("------------------ OPCIONALS ------------------")
+
+var number :Int?
+number = 21
+//print(number) //console: Optional(21)
+print(number!) //console: 21 => para remover o texto opcional precisamos colocar o !
+
+print(number ?? "no value");
+
+if let year = number {
+    print("the age is + ",year)
+}else{
+    print("no value")
+}
+
+
+
+func returnAge(myAge: Int?){
+    
+    // é executado quando a expressão for contrario do esperado, no caso se age for diferente de myAge ele ira retornar "inform your age"
+    guard let age = myAge else{
+        print("inform your age");
+        return;
+    }
+    
+    print("Your age is: ", myAge)
+    
+}
+
+returnAge(myAge: number)
