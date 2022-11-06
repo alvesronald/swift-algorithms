@@ -19,11 +19,24 @@ struct ContentView: View {
             print("the Button was pressed!")
         }){
             Text(myButtonText)
+                .fontWeight(.black)
             
             // valores para databinding deve estar com "$" na frente => $show
         }.alert(isPresented: $show, content: {
-            Alert(title: Text("TITLE"), message: Text("MESSAGE"), dismissButton: .default(Text("ACEPT")))
+            Alert(title: Text("TITLE"), message: Text("MESSAGE"), dismissButton: .default(Text("ACCEPT")))
         })
     }
 }
 
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group{
+            ContentView()
+                .preferredColorScheme(.dark);
+            ContentView()
+                .previewDevice("iPhone 12 Pro Max")
+                
+        }
+    }
+}
