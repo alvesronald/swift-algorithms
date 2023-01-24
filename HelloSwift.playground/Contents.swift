@@ -98,6 +98,7 @@ print(number!) //console: 21 => para remover o texto opcional precisamos colocar
 
 print(number ?? "no value");
 
+//esta atribuindo o valor de number a year
 if let year = number {
     print("the age is + ",year)
 }else{
@@ -124,12 +125,15 @@ returnAge(myAge: number)
 print("------------------ CHANGE DATATYPE ------------------")
 
 let number1 = "20"
-let number2 = 30
+let number2 = 60
 
+// abaixo estamos convertendo o number 1 para inteiro e para forcar essa mudanca de tipo colocamos o "!" no final.
 let sum = Int(number1)! + number2
 print(sum);
 
 
+// Aqui não precisa do !(force) pois eu estou atribuindo o Int(number1) ao num1 e a passagem de valor
+// possui uma certeza
 if let num1 = Int(number1){
     let sum = num1 + number2
     print(sum)
@@ -138,4 +142,169 @@ if let num1 = Int(number1){
 }
 
 
+print("------------------ IF ------------------")
 
+// == -> IGUAL
+// === -> IDENTICO
+
+let age2 = 22;
+
+if(age2 == 22){
+  print("Your age is 22")
+}else if(age2 == 23){
+ print("Your age is 23")
+}else{
+  print("Your age is \(age2)")
+}
+
+
+print("------------------ SWITCH ------------------")
+
+let number_1 = 21
+print(type(of: number_1))
+
+switch number_1 {
+case 10:
+  print(10)
+case 20:
+  print(20)
+case 21...30:
+  print("The number is entry 21 and 30")
+default:
+  print(number_1)
+}
+
+
+let day = "domingo";
+
+switch(day){
+  case "sabado":
+  print("Vamos passear, hoje é sabado!");
+  case "segunda", "terca", "quarta":
+  print("Bora trabalhar!");
+  case "domingo":
+   print("Vamos passear, hoje é domingo!");
+   default:
+   print("Bora trabalhar!");
+}
+
+print("------------------ FOR ------------------")
+
+
+let number_2 = 100;
+
+for i in 1...number_2{
+  print("The number is \(i)")
+}
+
+
+let letras = "ABCDEF";
+
+for letra in letras{
+  print(letra)
+}
+
+
+
+let names = ["Ronald", "Guilherme", "Luisa", "Silvana"];
+
+
+for name in names{
+  print(name);
+}
+
+
+print("------------------ ARRAYS ------------------")
+
+
+var nameList = ["Ronald", "Guilherme", "Luisa", "Silvana"];
+
+print(nameList);
+
+//Print de um valor de uma posicao especifica
+print(nameList[1])
+
+//Quantos itens tem no array
+print(nameList.count)
+
+
+//Quantos caracteres tem um item do array
+print(nameList[2].count)
+
+//Adicionar um item no array
+nameList.append("Rosa");
+print(nameList);
+
+//Remover um item no array
+nameList.remove(at: 1)
+print(nameList);
+
+
+
+print("------------------ TUPLAS ------------------")
+// ARRAY - TODOS ITENS SÃO SO DE UM TIPO
+// TUPLAS - ITEMS PODEM MUDAR SUA TIPAGEM
+
+
+//ARRAY
+var nameList2 = ["Ronald", "Guilherme", "Luisa", "Silvana"];
+
+// TUPLAS
+var usuario2 = ("Ronald", 22, 32323232, true);
+print(usuario2.0);
+
+
+let (name3, age, phone, bool) = usuario2;
+print(name3)
+
+
+print("------------------ FUNCTIONS ------------------")
+
+func hello(name: String){
+  print("Hello \(name)");
+}
+
+hello(name: "Ronald");
+
+
+
+// Quando uma função tem retorno adicionamos " -> e o tipo do retorno"
+func sum(value1: Int, value2: Int) -> Int{
+  return value1 + value2
+}
+
+let value1 = 50;
+let value2 = 90
+
+let res = sum(value1: 10, value2: 20);
+let res2 = sum(value1: value1, value2: value2);
+
+print("RES", res);
+print("RES2", res2);
+
+
+print("------------------ Classes ------------------")
+
+class Person{
+
+  // variaveis
+  var name = "";
+  var age = 0;
+
+
+  // constuctor -> Funcao executada quando a classe é "chamada"
+  init(nameParam: String, ageParam: Int){
+    self.name = nameParam;
+    self.age = ageParam
+  }
+
+  // metodos = funcoes
+  func hola() -> String{
+    return "Hello World Personas"
+  }
+
+}
+
+
+let person1 = Person(nameParam: "Otavio", ageParam: 21);
+print(person1.name)
